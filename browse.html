@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Browse opportunities · OpenYad</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="browse">
+  <header class="site-header" id="site-header"></header>
+
+  <main class="wrap">
+    <section style="padding-bottom:0">
+      <h1>Browse opportunities</h1>
+      <p class="muted">Combine any filters. Details marked “Check with organiser” could not be confirmed on the organisation’s website.</p>
+
+      <div class="filters">
+        <div class="filter-grid">
+          <label class="field full">Search
+            <input type="search" id="f-q" placeholder="Search by word, organisation or place">
+          </label>
+          <label class="field half">Category
+            <select id="f-cat"></select>
+          </label>
+          <label class="field">My age
+            <select id="f-age">
+              <option value="">Any age</option>
+              <option value="13">13+ (open to 13-year-olds)</option>
+              <option value="16">16+ (open to 16-year-olds)</option>
+              <option value="18">18+ (show everything)</option>
+            </select>
+          </label>
+          <label class="field">Time I have
+            <select id="f-time">
+              <option value="">Any length</option>
+              <option value="under1">Under 1 hour</option>
+              <option value="1to3">1 to 3 hours</option>
+              <option value="halfday">Half day or more</option>
+            </select>
+          </label>
+          <label class="field">How often
+            <select id="f-freq">
+              <option value="">Any</option>
+              <option value="oneoff">One-off</option>
+              <option value="weekly">Weekly</option>
+              <option value="flexible">Flexible</option>
+            </select>
+          </label>
+          <label class="field">Where
+            <select id="f-mode">
+              <option value="">Anywhere</option>
+              <option value="home">From home</option>
+              <option value="inperson">In person</option>
+            </select>
+          </label>
+          <label class="field">I live in
+            <select id="f-area"></select>
+          </label>
+          <label class="field">Sort by
+            <select id="f-sort">
+              <option value="best">Best for under-18s first</option>
+              <option value="near">Closest to me first</option>
+              <option value="az">A to Z</option>
+            </select>
+          </label>
+          <label class="check full">
+            <input type="checkbox" id="f-unsure" checked>
+            <span>Also show listings where that detail is not confirmed yet</span>
+          </label>
+        </div>
+        <p class="note small" id="near-hint" hidden style="margin:12px 0 0">Choose your area under “I live in” to sort by distance. Your location is never requested: the site only uses the area you pick.</p>
+      </div>
+
+      <div class="result-bar">
+        <strong id="count" aria-live="polite"></strong>
+        <button class="linkish" type="button" id="reset">Clear filters</button>
+      </div>
+    </section>
+
+    <div class="cards" id="results"></div>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+  <script src="data/site.js"></script>
+  <script src="data/areas.js"></script>
+  <script src="data/listings.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
