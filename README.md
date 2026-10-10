@@ -13,11 +13,11 @@ It is a plain static website: no backend, no database, no accounts, no tracking.
 | `hand.html` | "My Hand", the points page |
 | `suggest.html` | "Suggest an opportunity" (an email link only) |
 | `about.html` | About page |
-| `data/listings.js` | **Every listing. This is the file you edit.** |
-| `data/areas.js` | Areas of Dubai and their map positions (for distance) |
-| `data/site.js` | Site name, your contact email, and the categories |
-| `css/style.css` | Colours and layout |
-| `js/app.js` | The code that builds the pages from the data |
+| `listings.js` | **Every listing. This is the file you edit.** |
+| `areas.js` | Areas of Dubai and their map positions (for distance) |
+| `site.js` | Site name, your contact email, and the categories |
+| `style.css` | Colours and layout |
+| `app.js` | The code that builds the pages from the data |
 
 ---
 
@@ -41,7 +41,7 @@ before signing up, because it needs an email address.
 **First, change the contact email**
 
 1. Create a new free email address just for the site.
-2. Open `data/site.js` in TextEdit (right-click the file, Open With, TextEdit).
+2. Open `site.js` in TextEdit (right-click the file, Open With, TextEdit).
 3. Replace `your-site-email@example.com` with your new address. Keep the quote marks. Save.
 
 **Then publish**
@@ -52,7 +52,7 @@ before signing up, because it needs an email address.
 4. On the next page, click the link **uploading an existing file**.
 5. Open the `dubai-volunteering` folder in Finder. Select everything inside it
    (press Cmd+A) and drag it all onto the GitHub page. Wait for the upload to finish.
-   The `css`, `js` and `data` folders must show in the list.
+   All 12 files must show in the list.
 6. Click **Commit changes**.
 7. Click **Settings** (top of the repository), then **Pages** in the left menu.
 8. Under "Build and deployment", set **Source** to "Deploy from a branch",
@@ -64,7 +64,7 @@ That link is the one you share.
 
 **Updating the site later**
 
-1. Open your repository on GitHub and click into `data`, then `listings.js`.
+1. Open your repository on GitHub and click `listings.js`.
 2. Click the pencil icon to edit.
 3. Make your change and click **Commit changes**. The live site updates in about a minute.
 
@@ -72,7 +72,7 @@ That link is the one you share.
 
 ## 3. Add or edit a listing
 
-All listings live in `data/listings.js`. Each one is a block that starts with `{`
+All listings live in `listings.js`. Each one is a block that starts with `{`
 and ends with `},`. The top of that file explains every line.
 
 **To edit:** find the listing, change the words inside the quote marks, save.
@@ -126,7 +126,7 @@ Rules that keep the file working:
 - Every line ends with a comma, except the last line inside a list `[ ... ]`.
 - Words go inside "quote marks". Numbers, `null` and `CHECK` do not.
 - `id` must be unique.
-- `areas` must match a name in `data/areas.js` exactly. Use `[]` if there is no fixed place.
+- `areas` must match a name in `areas.js` exactly. Use `[]` if there is no fixed place.
 - If you are not sure about a detail, write `CHECK` (it shows "Check with organiser")
   or `null` for the age. Never guess.
 - If the page goes blank after an edit, a comma or quote mark is probably missing

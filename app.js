@@ -1,5 +1,5 @@
 /* OpenYad: all the site's behaviour lives in this one file.
-   It reads the data files (data/site.js, data/areas.js, data/listings.js)
+   It reads the data files (site.js, areas.js, listings.js)
    and builds each page. Nothing is sent to any server. */
 (function () {
   "use strict";
