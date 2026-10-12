@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#F4EFE6">
   <title>My Hand · OpenYad</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -11,66 +12,60 @@
   <header class="site-header" id="site-header"></header>
 
   <main class="wrap">
-    <section style="padding-bottom:16px">
+    <section style="padding-bottom:18px">
       <h1>My Hand</h1>
       <p class="muted">Every time you volunteer, log it here and a new shape fills in on your open hand. Each cause has its own colour, so no two hands look the same.</p>
     </section>
 
-    <div class="panel hand-box" id="friend" hidden style="margin-bottom:20px">
+    <div class="hand-box" id="friend" hidden style="margin-bottom:22px">
       <h2>A friend shared their hand with you</h2>
       <div id="friend-hand"></div>
-      <p class="note" id="friend-compare"></p>
+      <p class="small" id="friend-compare" style="margin:12px 0 0"></p>
     </div>
 
     <div class="hand-layout">
-      <div class="panel hand-box">
+      <div class="hand-box" id="hand-box">
         <div id="my-hand"></div>
-        <p style="margin:16px 0 0"><button class="btn ghost block" type="button" id="share" hidden>Share my hand with a friend</button></p>
-        <p class="small muted" id="share-msg" aria-live="polite" style="margin:8px 0 0; overflow-wrap:anywhere"></p>
+        <p style="margin:16px 0 0"><button class="btn sun block" type="button" id="share" hidden>Share my hand with a friend</button></p>
       </div>
 
-      <div style="display:grid; gap:20px">
-        <div class="panel">
+      <div style="display:grid; gap:22px">
+        <div class="panel sticker">
           <h2>Log a session</h2>
           <form id="log-form" class="form-grid">
-            <label class="field full">What did you do?
-              <select id="log-what"></select>
-            </label>
-            <label class="field full" id="other-cat" hidden>Which cause was it?
-              <select id="log-cat"></select>
-            </label>
-            <label class="field">Date
+            <div class="full">
+              <label class="field" for="log-what">What did you do?</label>
+              <select class="box" id="log-what"></select>
+            </div>
+            <div class="full" id="other-cat" hidden>
+              <label class="field" for="log-cat">Which cause was it?</label>
+              <select class="box" id="log-cat"></select>
+            </div>
+            <fieldset class="full">
+              <legend>How long?</legend>
+              <div class="chips" id="log-hours"></div>
+            </fieldset>
+            <div>
+              <label class="field" for="log-date">Date</label>
               <input type="date" id="log-date">
-            </label>
-            <label class="field">How long?
-              <select id="log-hours">
-                <option value="0.5">30 minutes</option>
-                <option value="1" selected>1 hour</option>
-                <option value="1.5">1.5 hours</option>
-                <option value="2">2 hours</option>
-                <option value="3">3 hours</option>
-                <option value="4">4 hours</option>
-                <option value="6">6 hours</option>
-                <option value="8">8 hours</option>
-              </select>
-            </label>
-            <label class="check full">
+            </div>
+            <label class="check" style="align-self:end; padding-bottom:12px">
               <input type="checkbox" id="log-friends">
               <span>I went with friends</span>
             </label>
             <div class="full">
               <button class="btn" type="submit">Add to my hand</button>
-              <span class="small muted" id="log-msg" aria-live="polite" style="margin-left:8px"></span>
+              <span class="small" id="log-msg" aria-live="polite" style="margin-left:10px; font-weight:700"></span>
             </div>
           </form>
         </div>
 
-        <div class="panel">
+        <div class="panel sticker">
           <h2>My sessions</h2>
           <ul class="log-list" id="log-list"></ul>
         </div>
 
-        <div class="panel">
+        <div class="panel sticker">
           <h2>How points work</h2>
           <ul class="rules">
             <li><strong>10 points</strong> for every hour you volunteer.</li>

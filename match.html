@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#F4EFE6">
+  <title>Quick Match · OpenYad</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="match">
+  <header class="site-header" id="site-header"></header>
+
+  <main class="wrap">
+    <section style="padding-bottom:18px; text-align:center">
+      <h1>Quick Match</h1>
+      <p class="muted" style="max-width:32em; margin:0 auto">One opportunity at a time. Swipe right to save it, left to skip. The buttons and the arrow keys do the same thing.</p>
+    </section>
+
+    <form class="match-setup sticker" id="m-setup" onsubmit="return false">
+      <fieldset>
+        <legend>My age</legend>
+        <div class="chips" id="m-age"></div>
+      </fieldset>
+      <div>
+        <label class="field" for="m-area">I live in (shows how far each one is)</label>
+        <select class="box" id="m-area"></select>
+      </div>
+    </form>
+
+    <p class="eyebrow" id="m-progress" style="text-align:center; margin:0 0 12px"></p>
+    <div class="deck" id="deck"></div>
+
+    <div class="deck-controls">
+      <button class="round sm" type="button" id="m-undo" aria-label="Undo the last card">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5L4 9l4 4"/><path d="M4 9h10a5.500 5.500 0 010 11h-3"/></svg>
+      </button>
+      <button class="round" type="button" id="m-skip" aria-label="Skip this one">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <button class="round yes" type="button" id="m-save" aria-label="Save this one">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.500l2.600 5.300 5.900.800-4.300 4.100 1.100 5.800L12 16.700l-5.300 2.800 1.100-5.800L3.500 9.600l5.900-.800z"/></svg>
+      </button>
+    </div>
+    <p class="small muted" style="text-align:center">Skip · Save. Saved ones go to your <a href="saved.html">shortlist</a>.</p>
+    <p class="sr-only" id="m-live" aria-live="polite"></p>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+  <script src="site.js"></script>
+  <script src="areas.js"></script>
+  <script src="listings.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

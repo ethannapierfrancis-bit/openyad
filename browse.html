@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#F4EFE6">
   <title>Browse opportunities · OpenYad</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -12,65 +13,59 @@
 
   <main class="wrap">
     <section style="padding-bottom:0">
-      <h1>Browse opportunities</h1>
-      <p class="muted">Combine any filters. Details marked “Check with organiser” could not be confirmed on the organisation’s website.</p>
+      <h1>Browse</h1>
+      <p class="muted">Tap any mix of filters. “Ask” on the age stamp means the organiser’s website did not say, so check with them.</p>
 
-      <div class="filters">
-        <div class="filter-grid">
-          <label class="field full">Search
-            <input type="search" id="f-q" placeholder="Search by word, organisation or place">
-          </label>
-          <label class="field half">Category
-            <select id="f-cat"></select>
-          </label>
-          <label class="field">My age
-            <select id="f-age">
-              <option value="">Any age</option>
-              <option value="13">13+ (open to 13-year-olds)</option>
-              <option value="16">16+ (open to 16-year-olds)</option>
-              <option value="18">18+ (show everything)</option>
-            </select>
-          </label>
-          <label class="field">Time I have
-            <select id="f-time">
-              <option value="">Any length</option>
-              <option value="under1">Under 1 hour</option>
-              <option value="1to3">1 to 3 hours</option>
-              <option value="halfday">Half day or more</option>
-            </select>
-          </label>
-          <label class="field">How often
-            <select id="f-freq">
-              <option value="">Any</option>
-              <option value="oneoff">One-off</option>
-              <option value="weekly">Weekly</option>
-              <option value="flexible">Flexible</option>
-            </select>
-          </label>
-          <label class="field">Where
-            <select id="f-mode">
-              <option value="">Anywhere</option>
-              <option value="home">From home</option>
-              <option value="inperson">In person</option>
-            </select>
-          </label>
-          <label class="field">I live in
-            <select id="f-area"></select>
-          </label>
-          <label class="field">Sort by
-            <select id="f-sort">
-              <option value="best">Best for under-18s first</option>
-              <option value="near">Closest to me first</option>
-              <option value="az">A to Z</option>
-            </select>
-          </label>
-          <label class="check full">
-            <input type="checkbox" id="f-unsure" checked>
-            <span>Also show listings where that detail is not confirmed yet</span>
-          </label>
+      <form class="filters sticker" id="filters" onsubmit="return false">
+        <div>
+          <label class="field" for="f-q">Search</label>
+          <input type="search" id="f-q" placeholder="Try “dogs”, “tutor” or “library”">
         </div>
-        <p class="note small" id="near-hint" hidden style="margin:12px 0 0">Choose your area under “I live in” to sort by distance. Your location is never requested: the site only uses the area you pick.</p>
-      </div>
+
+        <fieldset>
+          <legend>Cause</legend>
+          <div class="chips scroll" id="f-cat"></div>
+        </fieldset>
+
+        <div class="filter-row">
+          <fieldset>
+            <legend>My age</legend>
+            <div class="chips" id="f-age"></div>
+          </fieldset>
+          <div>
+            <label class="field" for="f-area">I live in</label>
+            <select class="box" id="f-area"></select>
+          </div>
+        </div>
+
+        <details class="more" id="more">
+          <summary>More filters: time, how often, where, sorting</summary>
+          <div style="display:grid; gap:16px">
+            <div class="filter-row three">
+              <fieldset><legend>Time I have</legend><div class="chips" id="f-time"></div></fieldset>
+              <fieldset><legend>How often</legend><div class="chips" id="f-freq"></div></fieldset>
+              <fieldset><legend>Where</legend><div class="chips" id="f-mode"></div></fieldset>
+            </div>
+            <div class="filter-row">
+              <div>
+                <label class="field" for="f-sort">Sort by</label>
+                <select class="box" id="f-sort">
+                  <option value="best">Best for under-18s first</option>
+                  <option value="near">Closest to me first</option>
+                  <option value="az">A to Z</option>
+                </select>
+              </div>
+              <label class="check" style="align-self:end; padding-bottom:10px">
+                <input type="checkbox" id="f-unsure" checked>
+                <span>Also show listings where that detail is not confirmed yet</span>
+              </label>
+            </div>
+          </div>
+        </details>
+        <p class="note small" id="near-hint" hidden style="margin:0">Choose your area under “I live in” to sort by distance. Your location is never requested: the site only uses the area you pick.</p>
+      </form>
+
+      <p class="note" id="one-note" hidden style="margin:18px 0 0">You are looking at one shared listing. <button class="linkish" type="button" id="show-all" style="padding:0">Show everything</button></p>
 
       <div class="result-bar">
         <strong id="count" aria-live="polite"></strong>

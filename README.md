@@ -7,8 +7,9 @@ It is a plain static website: no backend, no database, no accounts, no tracking.
 
 | File or folder | What it is |
 | --- | --- |
-| `index.html` | Home page (search and category cards) |
-| `browse.html` | All listings with filters and sorting |
+| `index.html` | Home page (the finder sentence and cause tiles) |
+| `browse.html` | All listings with tap-to-filter chips and sorting |
+| `match.html` | Quick Match, the swipe deck |
 | `saved.html` | The visitor's "Save for later" shortlist |
 | `hand.html` | "My Hand", the points page |
 | `suggest.html` | "Suggest an opportunity" (an email link only) |
@@ -52,7 +53,7 @@ before signing up, because it needs an email address.
 4. On the next page, click the link **uploading an existing file**.
 5. Open the `dubai-volunteering` folder in Finder. Select everything inside it
    (press Cmd+A) and drag it all onto the GitHub page. Wait for the upload to finish.
-   All 12 files must show in the list.
+   All 13 files must show in the list.
 6. Click **Commit changes**.
 7. Click **Settings** (top of the repository), then **Pages** in the left menu.
 8. Under "Build and deployment", set **Source** to "Deploy from a branch",

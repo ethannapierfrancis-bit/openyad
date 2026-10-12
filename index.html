@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#F4EFE6">
   <title>OpenYad: volunteering in Dubai for students</title>
   <meta name="description" content="A free directory of volunteering opportunities in Dubai for students aged 13 to 18. Filter by interest, age, time and area.">
   <link rel="stylesheet" href="style.css">
@@ -14,38 +15,65 @@
   <main>
     <div class="wrap">
       <div class="hero">
-        <h1>Find volunteering in Dubai that fits you</h1>
-        <p class="lead">OpenYad means “open hand”. It is a free directory of <strong id="total">0</strong> volunteering opportunities for students aged 13 to 18, with the minimum age, time needed and location shown up front.</p>
-        <form class="search-row" action="browse.html" method="get" role="search">
-          <label class="sr-only" for="home-q">Search opportunities</label>
-          <input type="search" id="home-q" name="q" placeholder="Try “dogs”, “tutor” or “beach”">
-          <button class="btn" type="submit">Search</button>
-        </form>
-      </div>
+        <div>
+          <p class="eyebrow">OpenYad means “open hand”</p>
+          <h1>Volunteering in Dubai, <span class="mark">sorted for students.</span></h1>
+          <p class="lead"><strong id="total">0</strong> real opportunities, with the minimum age, time needed and location up front. No more finding out it’s 18+ after you’ve got excited.</p>
 
-      <section aria-labelledby="cats-title" style="padding-top:8px">
-        <h2 id="cats-title">Browse by what you care about</h2>
-        <div class="cat-grid" id="cat-grid"></div>
-        <p style="margin-top:16px"><a class="btn ghost" href="browse.html">See everything and use filters</a></p>
+          <form class="finder sticker" id="finder" aria-labelledby="finder-title" onsubmit="return false">
+            <p class="eyebrow" id="finder-title" style="margin:0">Find mine</p>
+            <p class="sentence">
+              I’m <label><span class="sr-only">Your age</span><select class="pick" id="fi-age"></select></label>,
+              I have <label><span class="sr-only">Time you have</span><select class="pick" id="fi-time"></select></label>,
+              I live in <label><span class="sr-only">Your area</span><select class="pick" id="fi-area"></select></label>
+              and I’m into <label><span class="sr-only">Cause</span><select class="pick" id="fi-cat"></select></label>.
+            </p>
+            <div class="finder-actions">
+              <a class="btn big" id="finder-go" href="browse.html">Show my <span id="finder-count" aria-live="polite">0</span> <span id="finder-word">matches</span></a>
+              <a class="btn plain" id="finder-swipe" href="match.html">or swipe through them</a>
+            </div>
+          </form>
+        </div>
+
+        <div class="hero-art" id="hero-art">
+          <div class="disc" id="hero-hand"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ticker" id="ticker" aria-hidden="true"></div>
+
+    <div class="wrap">
+      <section aria-labelledby="cats-title">
+        <h2 id="cats-title" class="reveal">Pick a cause</h2>
+        <div class="tiles reveal" id="tiles"></div>
       </section>
 
-      <section aria-labelledby="how-title">
-        <h2 id="how-title">How it works</h2>
-        <div class="steps">
-          <div class="step"><b>1</b><h3>Filter</h3><p class="muted">Choose your age, how much time you have and your area of Dubai.</p></div>
-          <div class="step"><b>2</b><h3>Save</h3><p class="muted">Shortlist the ones you like. The list stays on your own phone or computer.</p></div>
-          <div class="step"><b>3</b><h3>Sign up with them</h3><p class="muted">Each listing links to the organisation’s own website. Ask a parent first.</p></div>
+      <section aria-labelledby="ways-title">
+        <h2 id="ways-title" class="reveal">Three ways to find your thing</h2>
+        <div class="ways reveal">
+          <a class="way sticker" href="#finder"><b class="num">1</b><h3>Fill in the sentence</h3><p class="muted" style="margin:0">Four taps: your age, your time, your area and what you care about.</p></a>
+          <a class="way sticker" href="match.html"><b class="num">2</b><h3>Swipe in Quick Match</h3><p class="muted" style="margin:0">One opportunity at a time. Swipe right to save it, left to skip.</p></a>
+          <a class="way sticker" href="browse.html"><b class="num">3</b><h3>Browse everything</h3><p class="muted" style="margin:0">Search and combine filters, then sort by what is closest to you.</p></a>
         </div>
       </section>
 
       <section aria-labelledby="hand-title">
-        <div class="banner">
+        <div class="dark reveal">
+          <div id="mini-hand"></div>
           <div>
             <h2 id="hand-title">Grow your hand</h2>
-            <p class="muted" style="margin:0">Log each time you volunteer and watch a pattern fill your open hand. Every cause adds its own colour, and going with friends earns a bonus.</p>
+            <p class="muted" style="margin:0">Log each time you volunteer and a pattern fills your open hand. Every cause adds its own colour, and going with friends earns a bonus.</p>
           </div>
-          <a class="btn" href="hand.html">See My Hand</a>
+          <a class="btn sun" href="hand.html">See My Hand</a>
         </div>
+      </section>
+
+      <section aria-labelledby="promise-title" style="padding-top:8px">
+        <h2 id="promise-title" class="sr-only">Our promises</h2>
+        <ul class="promises reveal">
+          <li>No accounts</li><li>No tracking</li><li>No adverts</li><li>No donations</li><li>Links only to the organiser’s own site</li><li>Ask a parent before signing up</li>
+        </ul>
       </section>
     </div>
   </main>
